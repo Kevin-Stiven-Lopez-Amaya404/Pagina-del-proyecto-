@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe de Diseño de Software</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="topbar-title">Informe de Diseño de Software</span>
+</header>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar-label">Contenido</div>
+
+  <button class="nav-item menu-toggle" type="button" aria-expanded="false">
+    <span class="nav-num">Menu</span> informe de diseño
+  </button>
+
+  <div class="submenu" aria-hidden="true">
+    <a class="nav-item" href="#intro"><span class="nav-num">01</span> Introducción</a>
+    <a class="nav-item" href="#descripcion"><span class="nav-num">02</span> Descripción General</a>
+    <a class="nav-item" href="#arquitectura"><span class="nav-num">03</span> Arquitectura</a>
+    <a class="nav-item" href="#componentes"><span class="nav-num">04</span> Componentes / Módulos</a>
+    <a class="nav-item" href="#uml"><span class="nav-num">05</span> Diagramas UML</a>
+    <a class="nav-item" href="#basedatos"><span class="nav-num">06</span> Base de Datos</a>
+    <a class="nav-item" href="#interfaces"><span class="nav-num">07</span> Diseño de Interfaces</a>
+    <a class="nav-item" href="#reglas"><span class="nav-num">08</span> Reglas de Negocio</a>
+    <a class="nav-item" href="#seguridad"><span class="nav-num">09</span> Seguridad</a>
+    <a class="nav-item" href="#tecnicas"><span class="nav-num">10</span> Especificaciones Técnicas</a>
+    <a class="nav-item" href="#implementacion"><span class="nav-num">11</span> Implementación</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main" id="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Documento Técnico</div>
+    <h1>Informe de Diseño<br>de Software</h1>
+    <p>Documento que describe cómo se va a construir el sistema tomando como base los requerimientos definidos en el SRS. Su objetivo es guiar a los desarrolladores en la implementación.</p>
+  </div>
+
+  <!-- INDEX -->
+
+   
+
+  <!-- 1. INTRODUCCIÓN -->
+  <section class="section" id="intro">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Introducción</h2>
+    </div>
+    <p>Presenta el propósito y contexto del documento, estableciendo las bases para comprender el sistema que se va a desarrollar.</p>
+    <div class="card">
+      <div class="card-title">Incluye</div>
+      <ul class="list">
+        <li>Propósito del documento</li>
+        <li>Alcance del sistema</li>
+        <li>Definiciones y términos</li>
+        <li>Referencias de documentos relacionados</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. DESCRIPCIÓN GENERAL -->
+  <section class="section" id="descripcion">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Descripción General del Sistema</h2>
+    </div>
+    <p>Explica de forma general cómo funcionará el sistema, quiénes lo usarán y qué funcionalidades ofrecerá.</p>
+    <div class="card">
+      <div class="card-title">Incluye</div>
+      <ul class="list">
+        <li>Objetivo del sistema</li>
+        <li>Usuarios del sistema</li>
+        <li>Funcionalidades principales</li>
+        <li>Contexto del sistema</li>
+      </ul>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Módulo</th><th>Función</th><th>Usuarios</th></tr></thead>
+        <tbody>
+          <tr><td>Gestión de usuarios</td><td>Administrar cuentas y permisos</td><td>Administrador</td></tr>
+          <tr><td>Inventario</td><td>Control de productos</td><td>Operador</td></tr>
+          <tr><td>Reportes</td><td>Generación de informes</td><td>Gerente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. ARQUITECTURA -->
+  <section class="section" id="arquitectura">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Arquitectura del Software</h2>
+    </div>
+    <p>Describe la estructura general del sistema y cómo se organizan sus componentes para garantizar escalabilidad y mantenibilidad.</p>
+    <div class="card">
+      <div class="card-title">Tipos de Arquitectura</div>
+      <div class="chip-row">
+        <span class="chip chip-cyan">Arquitectura en capas</span>
+        <span class="chip chip-violet">Cliente-Servidor</span>
+        <span class="chip chip-cyan">MVC</span>
+        <span class="chip chip-green">Microservicios</span>
+      </div>
+    </div>
+    <div class="layers">
+      <div class="layer"><span class="layer-idx">01</span><span class="layer-text">Capa de Presentación</span></div>
+      <div class="layer"><span class="layer-idx">02</span><span class="layer-text">Capa Lógica de Negocio</span></div>
+      <div class="layer"><span class="layer-idx">03</span><span class="layer-text">Capa de Datos</span></div>
+    </div>
+  </section>
+
+  <!-- 4. COMPONENTES -->
+  <section class="section" id="componentes">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Diseño de Componentes o Módulos</h2>
+    </div>
+    <p>Describe cada módulo del sistema de manera detallada, especificando sus entradas, procesos internos y salidas.</p>
+    <div class="card">
+      <div class="card-title">Cada módulo incluye</div>
+      <ul class="list">
+        <li>Nombre del módulo</li>
+        <li>Descripción funcional</li>
+        <li>Entradas requeridas</li>
+        <li>Procesos que ejecuta</li>
+        <li>Salidas generadas</li>
+      </ul>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Módulo</th><th>Entrada</th><th>Proceso</th><th>Salida</th></tr></thead>
+        <tbody>
+          <tr><td>Autenticación</td><td>Usuario y contraseña</td><td>Validación de credenciales</td><td>Acceso al sistema</td></tr>
+          <tr><td>Inventario</td><td>Datos del producto</td><td>Registro y control</td><td>Stock actualizado</td></tr>
+          <tr><td>Reportes</td><td>Parámetros de filtro</td><td>Consulta y procesamiento</td><td>Informe generado</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 5. UML -->
+  <section class="section" id="uml">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Diagramas del Sistema (UML)</h2>
+    </div>
+    <p>Representan el diseño del sistema de forma gráfica, facilitando la comunicación entre el equipo de desarrollo.</p>
+    <div class="card">
+      <div class="card-title">Diagramas más comunes</div>
+      <ul class="list">
+        <li>Diagrama de Casos de Uso</li>
+        <li>Diagrama de Clases</li>
+        <li>Diagrama de Secuencia</li>
+        <li>Diagrama de Actividad</li>
+        <li>Diagrama de Componentes</li>
+        <li>Diagrama de Despliegue</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. BASE DE DATOS -->
+  <section class="section" id="basedatos">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Diseño de Base de Datos</h2>
+    </div>
+    <p>Describe cómo se almacenará la información del sistema, definiendo tablas, campos y relaciones.</p>
+    <div class="card">
+      <div class="card-title">Incluye</div>
+      <ul class="list">
+        <li>Modelo Entidad–Relación</li>
+        <li>Tablas y campos</li>
+        <li>Llaves primarias y foráneas</li>
+        <li>Relaciones entre tablas</li>
+      </ul>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Tabla</th><th>Descripción</th></tr></thead>
+        <tbody>
+          <tr><td>Usuario</td><td>Información de usuarios registrados</td></tr>
+          <tr><td>Producto</td><td>Datos de productos del inventario</td></tr>
+          <tr><td>Pedido</td><td>Registro de pedidos realizados</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 7. INTERFACES -->
+  <section class="section" id="interfaces">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>Diseño de Interfaces</h2>
+    </div>
+    <p>Describe cómo será la interacción del usuario con el sistema, incluyendo pantallas, formularios y flujo de navegación.</p>
+    <div class="card">
+      <div class="card-title">Incluye</div>
+      <ul class="list">
+        <li>Prototipos de pantallas</li>
+        <li>Formularios de entrada</li>
+        <li>Menús de navegación</li>
+        <li>Flujo de navegación</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Interfaces ejemplo</div>
+      <div class="chip-row">
+        <span class="chip chip-cyan">Login</span>
+        <span class="chip chip-violet">Panel principal</span>
+        <span class="chip chip-green">Gestión de registros</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. REGLAS DE NEGOCIO -->
+  <section class="section" id="reglas">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2>Reglas de Negocio</h2>
+    </div>
+    <p>Define las condiciones, restricciones y lógica que rigen el comportamiento del sistema según el dominio del negocio.</p>
+    <div class="rule-item"><div class="rule-dot"></div><div class="rule-text">Un usuario no puede registrarse con un correo duplicado.</div></div>
+    <div class="rule-item"><div class="rule-dot"></div><div class="rule-text">Un pedido debe tener al menos un producto para ser confirmado.</div></div>
+    <div class="rule-item"><div class="rule-dot"></div><div class="rule-text">Un usuario solo puede tener tres préstamos activos simultáneamente.</div></div>
+  </section>
+
+  <!-- 9. SEGURIDAD -->
+  <section class="section" id="seguridad">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2>Seguridad del Sistema</h2>
+    </div>
+    <p>Describe los mecanismos de protección implementados para garantizar la integridad, confidencialidad y disponibilidad del sistema.</p>
+    <div class="card">
+      <div class="card-title">Mecanismos de seguridad</div>
+      <ul class="list">
+        <li>Autenticación de usuarios</li>
+        <li>Autorización basada en roles</li>
+        <li>Control de acceso granular</li>
+        <li>Protección de datos sensibles</li>
+        <li>Manejo seguro de contraseñas (hashing)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 10. ESPECIFICACIONES TÉCNICAS -->
+  <section class="section" id="tecnicas">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2>Especificaciones Técnicas</h2>
+    </div>
+    <p>Define el stack tecnológico y las herramientas utilizadas en el desarrollo del sistema.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Componente</th><th>Tecnología</th></tr></thead>
+        <tbody>
+          <tr><td>Frontend</td><td>HTML, CSS, JavaScript</td></tr>
+          <tr><td>Backend</td><td>Java / Node.js</td></tr>
+          <tr><td>Base de datos</td><td>MySQL / PostgreSQL</td></tr>
+          <tr><td>Control de versiones</td><td>Git</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 11. IMPLEMENTACIÓN -->
+  <section class="section" id="implementacion">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <h2>Consideraciones de Implementación</h2>
+    </div>
+    <p>Incluye aspectos clave relacionados con el proceso de desarrollo y las buenas prácticas del equipo.</p>
+    <div class="card">
+      <div class="card-title">Aspectos a considerar</div>
+      <ul class="list">
+        <li>Estándares de codificación</li>
+        <li>Estructura del proyecto</li>
+        <li>Manejo de errores y excepciones</li>
+        <li>Pruebas del sistema</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" title="Volver arriba">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
